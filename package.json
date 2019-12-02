@@ -1,0 +1,23 @@
+{
+  "name": "too-many-keys",
+  "version": "1.0.0",
+  "description": "",
+  "main": "keys.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.7.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marwinburesch/too-many-keys.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marwinburesch/too-many-keys/issues"
+  },
+  "homepage": "https://github.com/marwinburesch/too-many-keys#readme"
+}
