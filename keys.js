@@ -5,7 +5,7 @@ const [cmd, key, value] = useArgs;
 
 switch (cmd) {
   case "get":
-    get(key);
+    console.log(get(key));
     break;
   case "set":
     set(key, value);
