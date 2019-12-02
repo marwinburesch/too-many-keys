@@ -1,21 +1,17 @@
-const [cmd, key, value] = process.argv.slice(2);
+const { get, set, unset } = require("./utils/commands");
 
-const passwords = {
-  wifi: "asdf123",
-  banking: "pw123"
-};
+const useArgs = process.argv.slice(2);
+const [cmd, key, value] = useArgs;
 
 switch (cmd) {
   case "get":
-    console.log(passwords[key]);
+    get(key);
     break;
   case "set":
-    console.log("setting: " + key + " to: " + value);
-    passwords[key] = value;
+    set(key, value);
     break;
   case "unset":
-    console.log(key + " unset");
-    delete passwords[key];
+    unset(key);
     break;
   default:
     console.log("unknown command");
