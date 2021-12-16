@@ -1,6 +1,7 @@
 const fs = require("fs");
 
 const filePath = "./utils/passwords.json";
+const { encrypt, decrypt } = require("./crypto");
 
 async function readPasswords() {
   return new Promise(resolve => {
@@ -28,15 +29,14 @@ function writePasswords(passwords) {
 
 async function get(key) {
   const passwords = await readPasswords();
-  return passwords[key];
+  return decrypt(passwords[key]);
 }
 
 async function set(key, value) {
   const passwords = await readPasswords();
-  console.log("setting: " + key + " to: " + value);
-  passwords[key] = value;
+  console.log("setting: " + key + " to: " + encrypt(value));
+  passwords[key] = encrypt(value);
   writePasswords(passwords);
-  return;
 }
 
 async function unset(key) {
